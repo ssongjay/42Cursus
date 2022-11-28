@@ -6,44 +6,34 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:22:35 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/09 16:38:49 by injsong          ###   ########.fr       */
+/*   Updated: 2022/11/26 16:56:56 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+#include<stddef.h>
+#include"ft_strlen.c"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int i;
+	size_t i;
+	size_t dst_len;
+	size_t src_len;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int i;
-	unsigned int dest_len;
-	unsigned int src_len;
-
-	dest_len = ft_strlen(dest);
+	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = 0;
-	while (i < size && *dest)
+	while (i < dstsize && *dst)
 	{
-		dest++;
+		dst++;
 		i++;
 	}
-	if (i == size)
-		return (src_len + size);
-	// 오버플로우 고려?
-	while (i < size - 1 && *src)
+	if (i == dstsize)
+		return (src_len + dstsize);
+	while ((i + 1 < dstsize) && *src)
 	{
-		*dest = *src;
+		*dst++ = *src++;
 		i++;
-		dest++;
-		src++;
 	}
-	dest[i] = '\0';
-	return (dest_len + src_len);
+	*dst = '\0';
+	return (dst_len + src_len);
 }

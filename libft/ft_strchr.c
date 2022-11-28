@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 21:43:35 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/16 15:43:17 by injsong          ###   ########.fr       */
+/*   Created: 2022/11/26 21:37:02 by injsong           #+#    #+#             */
+/*   Updated: 2022/11/28 13:44:01 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-
-void	*ft_memset(void *b, int c, size_t len)
+char    *ft_strchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char 	*tmp;
-	
-	tmp = (unsigned char *)b;
-	i = 0;
-	while (i < len)
-	{
-		tmp[i] = (unsigned char)c;
-		i++;
-	}
-	return ((void *)tmp);
+    while (*s)
+    {
+        if (*s == (unsigned char)c)
+            return ((char *)s);
+        s++;
+    }
+    if ((unsigned char)c == '\0')
+        return ((char *)s);
+    return (0);
 }

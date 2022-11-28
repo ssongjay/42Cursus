@@ -6,39 +6,29 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:49:18 by injsong           #+#    #+#             */
-/*   Updated: 2022/10/06 20:55:39 by injsong          ###   ########.fr       */
+/*   Updated: 2022/11/18 17:49:21 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	get_src_len(char *src)
+#include<string.h>
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	src_len;
 
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
 	i = 0;
-	while (src[i])
+	if (dstsize != 0)
 	{
-		i++;
-	}
-	return (i);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	src_len;
-
-	src_len = get_src_len(src);
-	i = 0;
-	if (size != 0)
-	{
-		while (i < size - 1)
+		while ((i < dstsize - 1) && src[i])
 		{
-			if (src[i])
-				dest[i] = src[i];
-			else if (!src[i])
-				dest[i] = '\0';
+			dst[i] = src[i];
 			i++;
 		}
+		dst[i] = '\0';
 	}
 	return (src_len);
 }

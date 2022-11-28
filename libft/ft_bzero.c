@@ -6,7 +6,20 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:44:31 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/09 21:44:36 by injsong          ###   ########.fr       */
+/*   Updated: 2022/11/28 15:51:30 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<string.h>
+
+void	*ft_bzero(void *s, size_t n)
+{
+	unsigned char	*tmp;
+
+	tmp = s;
+	while (n--)
+	{
+		tmp = 0;
+		tmp++;
+	}
+}
