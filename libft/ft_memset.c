@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:43:35 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/16 15:43:17 by injsong          ###   ########.fr       */
+/*   Updated: 2022/11/30 19:55:17 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
-	unsigned char 	*tmp;
-	
+	unsigned char	*tmp;
+
 	tmp = (unsigned char *)b;
 	i = 0;
 	while (i < len)

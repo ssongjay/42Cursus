@@ -6,19 +6,19 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:37:02 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/28 13:44:01 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/05 15:23:10 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int ch)
 {
-    while (*s)
-    {
-        if (*s == (unsigned char)c)
-            return ((char *)s);
-        s++;
-    }
-    if ((unsigned char)c == '\0')
-        return ((char *)s);
-    return (0);
+	while (*str)
+	{
+		if (*str == (char)ch)
+			return ((char *)str);
+		str++;
+	}
+	if (ch == 0)
+		return ((char *)str);
+	return (0);
 }

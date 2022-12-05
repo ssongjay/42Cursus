@@ -6,24 +6,24 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:02:30 by injsong           #+#    #+#             */
-/*   Updated: 2022/10/08 18:52:15 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/05 18:32:05 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include<string.h>
+
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while (i < n && ((*s1 != '\0') && (*s2 != '\0')))
+	while (i < n && (str1[i] && str2[i]))
 	{
-		if (*s1 != *s2)
-			break;
-		s1++;
-		s2++;
+		if (str1[i] != str2[i])
+			break ;
 		i++;
 	}
 	if (i == n)
 		return (0);
-	return (*s1 - *s2);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
