@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 18:10:51 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/20 16:11:36 by injsong          ###   ########.fr       */
+/*   Created: 2022/12/06 13:48:23 by injsong           #+#    #+#             */
+/*   Updated: 2022/12/12 13:57:31 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include"ft_strlen.c"
+#include<string.h>
 
-char	*ft_strdup(char *src)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	src_len;
-	size_t	i;
-	char	*dup_str;
+	unsigned char	*ps;
 
-	src_len = ft_strlen(src);
-	dup_str = (char *)malloc(sizeof(char) * (src_len + 1));
-	if (!dup_str)
-		return (0);
-	i = 0;
-	while (src[i] != '\0')
+	ps = (unsigned char *)s;
+	while (n--)
 	{
-		dup_str[i] = src[i];
-		i++;
+		if ((unsigned char)c == *ps)
+			return ((void *)ps);
+		ps++;
 	}
-	dup_str[i] = '\0';
-	return (dup_str);
+	return (0);
 }

@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 18:10:51 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/20 16:11:36 by injsong          ###   ########.fr       */
+/*   Created: 2022/12/20 16:25:22 by injsong           #+#    #+#             */
+/*   Updated: 2022/12/22 19:02:01 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include<string.h>
 #include"ft_strlen.c"
+#include"ft_strdup.c"
 
-char	*ft_strdup(char *src)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	src_len;
 	size_t	i;
-	char	*dup_str;
+	char	*sub_str;
 
-	src_len = ft_strlen(src);
-	dup_str = (char *)malloc(sizeof(char) * (src_len + 1));
-	if (!dup_str)
-		return (0);
+	sub_str = 0;
 	i = 0;
-	while (src[i] != '\0')
+	if (!s)
+		return (0);
+	if ((!len) || (start >= ft_strlen(s)))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	sub_str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub_str)
+		return (0);
+	while (i < len)
 	{
-		dup_str[i] = src[i];
+		sub_str[i] = s[i];
 		i++;
 	}
-	dup_str[i] = '\0';
-	return (dup_str);
+	sub_str[i] = '\0';
+	return (sub_str);
 }

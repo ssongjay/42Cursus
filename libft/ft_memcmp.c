@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 18:10:51 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/20 16:11:36 by injsong          ###   ########.fr       */
+/*   Created: 2022/12/06 14:17:29 by injsong           #+#    #+#             */
+/*   Updated: 2022/12/12 13:57:26 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include"ft_strlen.c"
+#include<string.h>
 
-char	*ft_strdup(char *src)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	src_len;
-	size_t	i;
-	char	*dup_str;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
 
-	src_len = ft_strlen(src);
-	dup_str = (char *)malloc(sizeof(char) * (src_len + 1));
-	if (!dup_str)
-		return (0);
-	i = 0;
-	while (src[i] != '\0')
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
+	while (n > 0)
 	{
-		dup_str[i] = src[i];
-		i++;
+		if (*ps1 != *ps2)
+			return (*ps1 - *ps2);
+		n--;
+		ps1++;
+		ps2++;
 	}
-	dup_str[i] = '\0';
-	return (dup_str);
+	return (0);
 }

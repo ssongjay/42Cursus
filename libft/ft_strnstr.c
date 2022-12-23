@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
+/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 22:32:18 by song-inje         #+#    #+#             */
-/*   Updated: 2022/12/06 23:54:57 by song-inje        ###   ########.fr       */
+/*   Updated: 2022/12/12 13:57:07 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char *strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	if (*needle == '\0')
 		return ((char *)haystack);
@@ -28,8 +28,9 @@ char *strnstr(const char *haystack, const char *needle, size_t len)
 			while ((haystack[i + j] == needle[j]) && (i + j) < len)
 				j++;
 			if (needle[j] == '\0')
-				return (haystack[i]);
+				return ((char *)haystack[i]);
 		}
+		i++;
 	}
 	return (0);
 }
