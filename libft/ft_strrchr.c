@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:02:49 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/07 17:32:02 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/28 18:57:13 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *str, int ch)
 	while (*str != '\0')
 	{
 		if (*str == (char)ch)
-			last = str;
+			last = (char *)str;
 		str++;
 	}
 	if (ch == 0)

@@ -6,13 +6,13 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:22:42 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/26 21:24:44 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/29 15:00:05 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return (c + ('a' - 'A'));
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + ('a' - 'A'));
+	return (c);
 }

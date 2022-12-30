@@ -6,13 +6,12 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:03:40 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/23 20:02:02 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/29 14:58:09 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-#include"ft_strlen.c"
-#include"ft_memcpy.c"
+#include<stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
@@ -24,7 +23,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (0);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	join_str = (char *)malloc(sizeof(char) * (s1_len + s2_len) + 1)	;
+	join_str = (char *)malloc(sizeof(char) * ((s1_len + s2_len) + 1));
 	if (!join_str)
 		return (0);
 	ft_memcpy(join_str, s1, s1_len);

@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:44:31 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/28 15:51:30 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/28 18:40:09 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_bzero(void *s, size_t n)
 	tmp = s;
 	while (n--)
 	{
-		tmp = 0;
+		*tmp = 0;
 		tmp++;
 	}
+	return (0);
 }

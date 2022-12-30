@@ -6,15 +6,12 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 20:03:36 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/23 21:06:48 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/29 14:58:38 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
-#include"ft_strdup.c"
-#include"ft_strlen.c"
-#include"ft_strchr.c"
-#include"ft_substr.c"
+#include "libft.h"
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
@@ -25,7 +22,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!s1)
 		return (0);
 	if (!set)
-		return (ft_strdup(""));
+		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))

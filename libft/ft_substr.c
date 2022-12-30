@@ -6,13 +6,12 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:25:22 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/22 19:02:01 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/29 14:58:35 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include"ft_strlen.c"
-#include"ft_strdup.c"
+#include<stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

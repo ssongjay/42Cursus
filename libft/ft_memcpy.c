@@ -6,11 +6,10 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:45:18 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/16 14:42:28 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/29 14:57:54 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stddef.h>
 #include<string.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
