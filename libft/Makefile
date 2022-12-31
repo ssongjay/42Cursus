@@ -6,7 +6,7 @@
 #    By: injsong <injsong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 18:52:07 by injsong           #+#    #+#              #
-#    Updated: 2022/12/29 15:08:49 by injsong          ###   ########.fr        #
+#    Updated: 2022/12/31 17:36:08 by injsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS = ./ft_atoi.c \
 		./ft_isascii.c \
 		./ft_isdigit.c \
 		./ft_isprint.c \
+		./ft_itoa.c \
 		./ft_strdup.c \
 		./ft_memchr.c \
 		./ft_memcmp.c \
