@@ -6,7 +6,7 @@
 #    By: injsong <injsong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 18:52:07 by injsong           #+#    #+#              #
-#    Updated: 2022/12/31 17:36:08 by injsong          ###   ########.fr        #
+#    Updated: 2022/12/31 18:03:55 by injsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = ./ft_atoi.c \
 		./ft_strlcat.c \
 		./ft_strlcpy.c \
 		./ft_strlen.c \
+		./ft_strmapi.c \
 		./ft_strncmp.c \
 		./ft_strnstr.c \
 		./ft_strrchr.c \
