@@ -6,11 +6,12 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:26:27 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/30 14:27:34 by injsong          ###   ########.fr       */
+/*   Updated: 2022/12/31 17:37:27 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	count_number(long long n)
 {
@@ -31,10 +32,27 @@ static size_t	count_number(long long n)
 
 char	*ft_itoa(int n)
 {
-	int		num_len;
-	int		i;
-	char	*result;
+	int			num_len;
+	char		*result;
+	long long	tmp;
 
 	num_len = count_number(n);
-	 
+	tmp = n;
+	result = (char *)malloc(sizeof(char) * (num_len + 1));
+	if (!result)
+		return (0);
+	result[num_len] = '\0';
+	if (!n)
+		result[0] = '0';
+	else if (n < 0)
+	{
+		result[0] = '-';
+		tmp *= (-1);
+	}
+	while (tmp)
+	{
+		result[--num_len] = tmp % 10 + '0';
+		tmp /= 10;
+	}
+	return (result);
 }
