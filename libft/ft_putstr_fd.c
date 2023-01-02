@@ -6,7 +6,7 @@
 /*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:28 by song-inje         #+#    #+#             */
-/*   Updated: 2023/01/02 15:25:31 by song-inje        ###   ########.fr       */
+/*   Updated: 2023/01/02 15:35:38 by song-inje        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,5 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	write(fd, s, ft_strlen(s));
 }
