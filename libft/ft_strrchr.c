@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:02:49 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/28 18:57:13 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/03 12:07:28 by song-inje        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
+#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int ch)
+char *ft_strrchr(const char *str, int ch)
 {
-	char	*last;
+	char *last;
 
 	last = 0;
 	while (*str != '\0')
