@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 12:48:20 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/29 15:33:37 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/02 18:45:30 by song-inje        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include <stdlib.h>
 #include "libft.h"
 
-static size_t	count_word(const char *str, char c)
+static size_t count_word(const char *str, char c)
 {
-	size_t	i;
-	size_t	num;
+	size_t i;
+	size_t num;
 
 	num = 0;
 	i = 0;
@@ -34,11 +34,11 @@ static size_t	count_word(const char *str, char c)
 	return (num);
 }
 
-static int	copy_word(char **result, char c, const char *str)
+static int copy_word(char **result, char c, const char *str)
 {
-	size_t	i;
-	size_t	copy_tmp;
-	size_t	index;
+	size_t i;
+	size_t copy_tmp;
+	size_t index;
 
 	i = 0;
 	index = 0;
@@ -61,9 +61,9 @@ static int	copy_word(char **result, char c, const char *str)
 	return (1);
 }
 
-static void	ft_free(char **result, size_t word)
+static void ft_free(char **result, size_t word)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (i < word && result[i] != 0)
@@ -71,18 +71,16 @@ static void	ft_free(char **result, size_t word)
 	free(result);
 }
 
-char	**ft_split(const char *str, char c)
+char **ft_split(const char *str, char c)
 {
-	int		i;
-	char	**result;
-	int		success;
+	char **result;
+	int success;
 
 	if (!str)
 		return (0);
 	result = (char **)malloc(sizeof(char *) * (count_word(str, c) + 1));
 	if (!result)
 		return (0);
-	i = 0;
 	success = copy_word(result, c, (char *)str);
 	if (!success)
 	{
