@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: injsong <injsong@student.42.fr>            +#+  +:+       +#+         #
+#    By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 18:52:07 by injsong           #+#    #+#              #
-#    Updated: 2022/12/31 18:03:55 by injsong          ###   ########.fr        #
+#    Updated: 2023/01/02 18:47:35 by song-inje        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,10 @@ SRCS = ./ft_atoi.c \
 		./ft_memcpy.c \
 		./ft_memmove.c \
 		./ft_memset.c \
+		./ft_putchar_fd.c \
+		./ft_putendl_fd.c \
+		./ft_putnbr_fd.c \
+		./ft_putstr_fd.c \
 		./ft_split.c \
 		./ft_strchr.c \
 		./ft_strjoin.c \
