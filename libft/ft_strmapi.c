@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 17:42:43 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/31 18:13:55 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/04 20:37:32 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (0);
-	result[len] = '\0';
 	while (i < len)
 	{
 		result[i] = (*f)(i, s[i]);
 		i++;
 	}
+	result[len] = '\0';
 	return (result);
 }
