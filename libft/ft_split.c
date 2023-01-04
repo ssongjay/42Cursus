@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
+/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 12:48:20 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/02 18:45:30 by song-inje        ###   ########.fr       */
+/*   Updated: 2023/01/04 17:39:00 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static size_t count_word(const char *str, char c)
+static size_t	count_word(const char *str, char c)
 {
-	size_t i;
-	size_t num;
+	size_t	i;
+	size_t	num;
 
 	num = 0;
 	i = 0;
@@ -34,11 +34,11 @@ static size_t count_word(const char *str, char c)
 	return (num);
 }
 
-static int copy_word(char **result, char c, const char *str)
+static int	copy_word(char **result, char c, const char *str)
 {
-	size_t i;
-	size_t copy_tmp;
-	size_t index;
+	size_t	i;
+	size_t	copy_tmp;
+	size_t	index;
 
 	i = 0;
 	index = 0;
@@ -51,9 +51,11 @@ static int copy_word(char **result, char c, const char *str)
 				i++;
 			if (i - copy_tmp == 0)
 				return (0);
-			result[index] = ft_strdup(&str[copy_tmp]);
+			result[index] = (char *)malloc(sizeof(char) * (i - copy_tmp + 1));
+			ft_strlcpy(result[index], &str[copy_tmp], i - copy_tmp + 1);
 			if (!result[index])
 				return (0);
+			index++;
 		}
 		else
 			i++;
@@ -61,9 +63,9 @@ static int copy_word(char **result, char c, const char *str)
 	return (1);
 }
 
-static void ft_free(char **result, size_t word)
+static void	ft_free(char **result, size_t word)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < word && result[i] != 0)
@@ -71,10 +73,10 @@ static void ft_free(char **result, size_t word)
 	free(result);
 }
 
-char **ft_split(const char *str, char c)
+char	**ft_split(const char *str, char c)
 {
-	char **result;
-	int success;
+	char	**result;
+	int		success;
 
 	if (!str)
 		return (0);
