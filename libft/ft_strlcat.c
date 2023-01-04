@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:22:35 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/29 14:58:16 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/04 14:15:08 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_len;
 	size_t	src_len;
 
-	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (!dst && !dstsize)
+		return (src_len);
+	dst_len = ft_strlen(dst);
 	i = 0;
 	while (i < dstsize && *dst != '\0')
 	{
