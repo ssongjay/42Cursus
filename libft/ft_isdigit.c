@@ -6,11 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:27 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/09 17:43:19 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/03 14:24:46 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

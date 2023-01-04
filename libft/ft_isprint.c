@@ -6,11 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:33:32 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/09 20:36:26 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/03 14:24:53 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
