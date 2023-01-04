@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+         #
+#    By: injsong <injsong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 18:52:07 by injsong           #+#    #+#              #
-#    Updated: 2023/01/02 18:47:35 by song-inje        ###   ########.fr        #
+#    Updated: 2023/01/04 18:01:10 by injsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ./ft_atoi.c \
+SRCS =  ./ft_atoi.c \
 		./ft_bzero.c \
 		./ft_calloc.c \
 		./ft_isalnum.c \
@@ -22,7 +22,6 @@ SRCS = ./ft_atoi.c \
 		./ft_isdigit.c \
 		./ft_isprint.c \
 		./ft_itoa.c \
-		./ft_strdup.c \
 		./ft_memchr.c \
 		./ft_memcmp.c \
 		./ft_memcpy.c \
@@ -34,6 +33,8 @@ SRCS = ./ft_atoi.c \
 		./ft_putstr_fd.c \
 		./ft_split.c \
 		./ft_strchr.c \
+		./ft_strdup.c \
+		./ft_striteri.c \
 		./ft_strjoin.c \
 		./ft_strlcat.c \
 		./ft_strlcpy.c \
