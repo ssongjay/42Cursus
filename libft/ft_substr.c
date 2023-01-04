@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:25:22 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/29 14:58:35 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/04 16:59:22 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (0);
 	while (i < len)
 	{
-		sub_str[i] = s[i];
+		sub_str[i] = s[i + start];
 		i++;
 	}
 	sub_str[i] = '\0';
