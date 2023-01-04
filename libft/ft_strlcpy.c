@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:49:18 by injsong           #+#    #+#             */
-/*   Updated: 2022/11/18 17:49:21 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/04 20:39:24 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (dstsize != 0)
 	{
-		while ((i < dstsize - 1) && src[i])
+		while ((i + 1 < dstsize) && src[i])
 		{
 			dst[i] = src[i];
 			i++;
