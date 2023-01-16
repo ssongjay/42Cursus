@@ -6,7 +6,7 @@
 #    By: injsong <injsong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 18:52:07 by injsong           #+#    #+#              #
-#    Updated: 2023/01/04 18:01:10 by injsong          ###   ########.fr        #
+#    Updated: 2023/01/16 14:24:02 by injsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,17 +47,18 @@ SRCS =  ./ft_atoi.c \
 		./ft_substr.c \
 		./ft_tolower.c \
 		./ft_toupper.c \
-# SRCS_B = ./ft_lstmap.c \
-# 		./ft_lstnew.c \
-# 		./ft_lstiter.c \
-# 		./ft_lstlast.c \
-# 		./ft_lstsize.c \
-# 		./ft_lstclear.c \
-# 		./ft_lstdelone.c \
-# 		./ft_lstadd_back.c \
-# 		./ft_lstadd_front.c
+
+SRCS_B = ./ft_lstnew.c \
+		./ft_lstiter.c \
+		./ft_lstlast.c \
+		./ft_lstsize.c \
+		./ft_lstclear.c \
+		./ft_lstdelone.c \
+		./ft_lstadd_back.c \
+		./ft_lstadd_front.c \
+		./ft_lstmap.c
 OBJS = $(SRCS:.c=.o)
-# OBJS_B = $(SRCS_B:.c=.o)
+OBJS_B = $(SRCS_B:.c=.o)
 INC = .
 DEL = rm -f
 ARC = ar -rc
@@ -76,8 +77,8 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(ARC) $@ $(OBJ)
 
-# bonus :
-# 	@make WITH_BONUS=1 all
+bonus :
+	@make WITH_BONUS=1 all
 
 clean :
 	$(DEL) $(OBJS) $(OBJS_B)
