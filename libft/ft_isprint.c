@@ -6,9 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:33:32 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/03 14:24:53 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/18 19:02:25 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:25:22 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/04 16:59:22 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/18 15:30:35 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if ((!len) || (start >= ft_strlen(s)))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+		len = ft_strlen(s) - start;
 	sub_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub_str)
 		return (0);
-	while (i < len)
+	while (i < len && s[i + start])
 	{
 		sub_str[i] = s[i + start];
 		i++;

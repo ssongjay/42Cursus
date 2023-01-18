@@ -6,13 +6,14 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:44:31 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/28 18:40:09 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/18 20:12:21 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
+#include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*tmp;
 
@@ -22,5 +23,4 @@ void	*ft_bzero(void *s, size_t n)
 		*tmp = 0;
 		tmp++;
 	}
-	return (0);
 }

@@ -6,9 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:16:05 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/29 15:00:19 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/18 19:04:18 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

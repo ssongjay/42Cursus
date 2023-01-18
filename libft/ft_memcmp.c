@@ -6,11 +6,12 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:17:29 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/12 13:57:26 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/18 19:02:52 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

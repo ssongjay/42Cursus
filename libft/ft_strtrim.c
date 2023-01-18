@@ -6,11 +6,10 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 20:03:36 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/03 14:27:07 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/18 18:31:35 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
 #include "libft.h"
 
 char	*ft_strtrim(const char *s1, const char *set)
