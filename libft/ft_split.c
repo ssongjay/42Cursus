@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 12:48:20 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/04 17:39:00 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:51:55 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ static int	copy_word(char **result, char c, const char *str)
 			if (i - copy_tmp == 0)
 				return (0);
 			result[index] = (char *)malloc(sizeof(char) * (i - copy_tmp + 1));
-			ft_strlcpy(result[index], &str[copy_tmp], i - copy_tmp + 1);
 			if (!result[index])
-				return (0);
+				return (index);
+			ft_strlcpy(result[index], &str[copy_tmp], i - copy_tmp + 1);
 			index++;
 		}
 		else
 			i++;
 	}
-	return (1);
+	return (-1);
 }
 
 static void	ft_free(char **result, size_t word)
@@ -84,9 +84,9 @@ char	**ft_split(const char *str, char c)
 	if (!result)
 		return (0);
 	success = copy_word(result, c, (char *)str);
-	if (!success)
+	if (success != -1)
 	{
-		ft_free(result, count_word(str, c));
+		ft_free(result, success);
 		return (0);
 	}
 	result[count_word(str, c)] = 0;
