@@ -6,11 +6,9 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:06:57 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:01:52 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/20 13:41:58 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

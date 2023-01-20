@@ -6,12 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:21:22 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:03:42 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:18:08 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
-#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

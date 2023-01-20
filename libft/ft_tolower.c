@@ -6,11 +6,9 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:22:42 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:04:14 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:18:44 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_tolower(int c)
 {

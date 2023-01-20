@@ -6,11 +6,9 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:27 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:02:22 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:14:27 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,11 +6,9 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:37:02 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:03:18 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:17:24 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strchr(const char *str, int ch)
 {

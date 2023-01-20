@@ -6,12 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 22:32:18 by song-inje         #+#    #+#             */
-/*   Updated: 2023/01/18 19:04:00 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:18:30 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

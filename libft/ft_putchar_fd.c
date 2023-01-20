@@ -6,11 +6,10 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:15:06 by song-inje         #+#    #+#             */
-/*   Updated: 2023/01/03 14:25:59 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:16:38 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)

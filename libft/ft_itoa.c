@@ -6,11 +6,10 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:26:27 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 18:52:48 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:14:42 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
 static size_t	count_number(long long n)

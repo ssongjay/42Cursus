@@ -6,12 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:45:18 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:02:55 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:16:14 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
-#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

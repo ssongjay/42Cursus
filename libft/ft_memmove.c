@@ -6,12 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:45:36 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/18 19:02:58 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:16:28 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
-#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
