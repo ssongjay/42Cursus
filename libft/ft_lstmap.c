@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:33:34 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/20 13:40:52 by injsong          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:14:49 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*tmp;
+	void	*ptr;
 
 	if (!lst || !f)
 		return (0);
 	new_lst = 0;
 	while (lst)
 	{
-		tmp = ft_lstnew(f(lst->content));
+		ptr = f(lst->content);
+		tmp = ft_lstnew(ptr);
 		if (!tmp)
 		{
+			del(ptr);
 			ft_lstclear(&new_lst, del);
 			return (0);
 		}
