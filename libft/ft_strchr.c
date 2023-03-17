@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:37:02 by injsong           #+#    #+#             */
-/*   Updated: 2023/01/19 14:17:24 by injsong          ###   ########.fr       */
+/*   Updated: 2023/03/17 16:02:41 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *str, int ch)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == (unsigned char)ch)
+		if if ((unsigned char)str[i] == (unsigned char)ch)
 			return ((char *)&str[i]);
 		i++;
 	}
