@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:10:51 by injsong           #+#    #+#             */
-/*   Updated: 2022/12/29 15:03:46 by injsong          ###   ########.fr       */
+/*   Updated: 2023/03/17 16:29:54 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *src)
 	src_len = ft_strlen(src);
 	dup_str = (char *)malloc(sizeof(char) * (src_len + 1));
 	if (!dup_str)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (src[i] != '\0')
 	{
