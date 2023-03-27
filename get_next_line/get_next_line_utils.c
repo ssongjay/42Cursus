@@ -6,11 +6,12 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:24:54 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/17 16:28:22 by injsong          ###   ########.fr       */
+/*   Updated: 2023/03/27 21:19:46 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strdef.h>
+#include <stddef.h>
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -24,30 +25,9 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
-{
-	size_t	i;
-	size_t	len;
-	char	*join_str;
-
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	join_str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!join_str)
-		return (NULL);
-	i = 0;
-	while (*s1 != '\0')
-		join_str[i++] = *s1++;
-	while (*s2 != '\0')
-		join_str[i++] = *s2++;
-	join_str[i] = '\0';
-	return (join_str);
-}
-
 char	*ft_strchr(const char *str, int ch)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -63,20 +43,65 @@ char	*ft_strchr(const char *str, int ch)
 
 char	*ft_strdup(const char *src)
 {
-	size_t	src_len;
-	size_t	i;
-	char	*dup_str;
+	char	*dest;
+	size_t	len;
+	size_t	index;
 
-	src_len = ft_strlen(src);
-	dup_str = (char *)malloc(sizeof(char) * (src_len + 1));
-	if (!dup_str)
+	len = ft_strlen(src);
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (!dest)
 		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
+	index = -1;
+	while (++index <= len)
+		dest[index] = src[index];
+	return (dest);
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t	i;
+
+	if (!dst && !src)
+		return (NULL);
+	if (dst <= src)
 	{
-		dup_str[i] = src[i];
-		i++;
+		i = 0;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
-	dup_str[i] = '\0';
-	return (dup_str);
+	else
+	{
+		i = len;
+		while (i > 0)
+		{
+			((unsigned char *)dst)[i - 1] = ((unsigned char *)src)[i - 1];
+			i--;
+		}
+	}
+	return (dst);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
+{
+	size_t	src_len;
+
+	if (!dst || !src)
+		return (0);
+	src_len = ft_strlen(src);
+	if (n == 0)
+		return (src_len);
+	if (src_len + 1 >= n)
+	{
+		ft_memmove(dst, src, n - 1);
+		dst[n - 1] = '\0';
+	}
+	else
+	{
+		ft_memmove(dst, src, src_len);
+		dst[src_len] = '\0';
+	}
+	return (src_len);
 }
