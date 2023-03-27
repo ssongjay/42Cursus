@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:22:50 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/27 19:03:46 by injsong          ###   ########.fr       */
+/*   Updated: 2023/03/28 03:24:33 by song-inje        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
+#define GET_NEXT_LINE_H
 
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *str, int ch);
-void	*ft_memmove(void *dst, const void *src, size_t len);
-char	*ft_strdup(const char *src);
-size_t	ft_strlcpy(char *dst, const char *src, size_t n);
-char	*get_next_line(int fd);
+#include <stdlib.h>
+#include <unistd.h>
+
+char *get_next_line(int fd);
+
+size_t ft_strlen(char *s);
+char *ft_strchr(char *str, int ch);
+void *ft_memcpy(void *dst, const void *src, size_t n);
+char *ft_strjoin(char *s1, char *s2);
+
 #endif
