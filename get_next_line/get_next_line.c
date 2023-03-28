@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
+/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:22:57 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/28 04:03:32 by song-inje        ###   ########.fr       */
+/*   Updated: 2023/03/28 13:47:20 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *new_line(int fd, char *main_buffer)
+char	*new_line(int fd, char *main_buffer)
 {
-	char *buffer;
-	int size;
+	char	*buffer;
+	int		size;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
@@ -37,10 +37,10 @@ char *new_line(int fd, char *main_buffer)
 	return (main_buffer);
 }
 
-char *set_line(char *main_buffer)
+char	*set_line(char *main_buffer)
 {
-	int i;
-	char *line;
+	int		i;
+	char	*line;
 
 	i = 0;
 	if (!main_buffer[i])
@@ -65,11 +65,11 @@ char *set_line(char *main_buffer)
 	return (line);
 }
 
-char *next_line(char *main_buffer)
+char	*next_line(char *main_buffer)
 {
-	int i;
-	int j;
-	char *buffer;
+	int		i;
+	int		j;
+	char	*buffer;
 
 	i = 0;
 	while (main_buffer[i] && main_buffer[i] != '\n')
@@ -91,10 +91,10 @@ char *next_line(char *main_buffer)
 	return (buffer);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	char *line;
-	static char *main_buffer;
+	char		*line;
+	static char	*main_buffer;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);

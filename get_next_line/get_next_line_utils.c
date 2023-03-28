@@ -3,34 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: song-inje <song-inje@student.42.fr>        +#+  +:+       +#+        */
+/*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:24:54 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/28 03:35:58 by song-inje        ###   ########.fr       */
+/*   Updated: 2023/03/28 13:09:59 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// char *ft_strchr(const char *str, int ch)
-// {
-// 	size_t i;
-
-// 	i = 0;
-// 	while (str[i] != '\0')
-// 	{
-// 		if ((unsigned char)str[i] == (unsigned char)ch)
-// 			return ((char *)&str[i]);
-// 		i++;
-// 	}
-// 	if ((unsigned char)ch == '\0')
-// 		return ((char *)&str[i]);
-// 	return (NULL);
-// }
-
 #include "get_next_line.h"
 
-size_t ft_strlen(char *s)
+size_t	ft_strlen(char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -40,9 +24,9 @@ size_t ft_strlen(char *s)
 	return (i);
 }
 
-char *ft_strchr(char *str, int ch)
+char	*ft_strchr(char *str, int ch)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!str)
@@ -60,9 +44,9 @@ char *ft_strchr(char *str, int ch)
 	return (NULL);
 }
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	if (!dst && !src)
 		return (dst);
@@ -75,11 +59,11 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t s1_len;
-	size_t s2_len;
-	char *str;
+	size_t	s1_len;
+	size_t	s2_len;
+	char	*str;
 
 	if (!s1)
 	{
