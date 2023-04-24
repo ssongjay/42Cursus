@@ -6,12 +6,11 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:03:38 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/28 21:41:16 by injsong          ###   ########.fr       */
+/*   Updated: 2023/04/24 16:01:50 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	ft_print_addr(unsigned long long n)
 {
@@ -59,7 +58,7 @@ void	ft_put_hex(unsigned long long n, char *base)
 		ft_put_hex(n % 16, base);
 	}
 	else
-		ft_putchar(n + 48);
+		ft_putchar(n + '0');
 }
 
 int	ft_print_hex(unsigned long long n, char format)
@@ -100,9 +99,7 @@ int	ft_printf(const char *s, ...)
 	while (s[i])
 	{
 		if (s[i] == '%')
-		{
 			len += ft_formats(s, ap, ++i);
-		}
 		else
 			len += ft_putchar(s[i]);
 		i++;

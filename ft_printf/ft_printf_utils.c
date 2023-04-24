@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:03:48 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/28 21:43:43 by injsong          ###   ########.fr       */
+/*   Updated: 2023/03/29 16:23:22 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_putnbr(int n)
 	}
 	if (n > 9)
 		len += ft_putnbr(n / 10);
-	len += ft_putchar(n % 10 + 48);
+	len += ft_putchar(n % 10 + '0');
 	return (len);
 }
 
@@ -67,6 +67,6 @@ int	ft_putnbr_u(unsigned long n)
 	len = 0;
 	if (n > 9)
 		len += ft_putnbr_u(n / 10);
-	len += ft_putchar(n % 10 + 48);
+	len += ft_putchar(n % 10 + '0');
 	return (len);
 }
