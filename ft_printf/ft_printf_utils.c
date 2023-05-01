@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:03:48 by injsong           #+#    #+#             */
-/*   Updated: 2023/03/29 16:23:22 by injsong          ###   ########.fr       */
+/*   Updated: 2023/04/30 16:13:54 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_print_percent(void)
 	return (1);
 }
 
-int	ft_putnbr_u(unsigned long n)
+int	ft_putnbr_u(unsigned int n)
 {
 	int	len;
 

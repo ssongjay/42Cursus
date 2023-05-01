@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:03:38 by injsong           #+#    #+#             */
-/*   Updated: 2023/04/24 16:01:50 by injsong          ###   ########.fr       */
+/*   Updated: 2023/04/30 16:13:14 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_formats(const char *s, va_list ap, int i)
 	else if (s[i] == 'X')
 		len += ft_print_hex(va_arg(ap, unsigned int), 'X');
 	else if (s[i] == 'p')
-		len += ft_print_addr(va_arg(ap, unsigned long));
+		len += ft_print_addr(va_arg(ap, unsigned long long));
 	return (len);
 }
 
@@ -82,7 +82,7 @@ int	ft_print_hex(unsigned long long n, char format)
 	while (n)
 	{
 		n /= 16;
-		++len;
+		len++;
 	}
 	return (len);
 }

@@ -6,8 +6,8 @@ NAME = libftprintf.a
 
 all : $(NAME)
 
-%.o:%.c ft_print.h
-	cc $(CFLAGS) -o $@ -c $<
+%.o:%.c
+	$(CC) $(CFLAG) -o $@ -c $<
 
 $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
