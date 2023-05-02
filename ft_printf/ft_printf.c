@@ -6,20 +6,20 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:03:38 by injsong           #+#    #+#             */
-/*   Updated: 2023/04/30 16:13:14 by injsong          ###   ########.fr       */
+/*   Updated: 2023/05/02 16:44:47 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_addr(unsigned long long n)
+int	ft_print_percent(void)
 {
-	int	len;
+	int	tmp;
 
-	len = 0;
-	len += write(1, "0x", 2);
-	len += ft_print_hex(n, 'x');
-	return (len);
+	tmp = write(1, "%", 1);
+	if (tmp == -1)
+		return (-1);
+	return (1);
 }
 
 int	ft_formats(const char *s, va_list ap, int i)
@@ -48,50 +48,12 @@ int	ft_formats(const char *s, va_list ap, int i)
 	return (len);
 }
 
-void	ft_put_hex(unsigned long long n, char *base)
-{
-	if (n < 16)
-		ft_putchar(base[n]);
-	else if (n > 15)
-	{
-		ft_put_hex(n / 16, base);
-		ft_put_hex(n % 16, base);
-	}
-	else
-		ft_putchar(n + '0');
-}
-
-int	ft_print_hex(unsigned long long n, char format)
-{
-	char	*base_x;
-	char	*base_xx;
-	int		len;
-
-	base_x = "0123456789abcdef";
-	base_xx = "0123456789ABCDEF";
-	len = 0;
-	if (n == 0)
-		len += write(1, "0", 1);
-	else
-	{
-		if (format == 'x')
-			ft_put_hex(n, base_x);
-		if (format == 'X')
-			ft_put_hex(n, base_xx);
-	}
-	while (n)
-	{
-		n /= 16;
-		len++;
-	}
-	return (len);
-}
-
 int	ft_printf(const char *s, ...)
 {
 	va_list	ap;
 	int		i;
 	int		len;
+	int		tmp;
 
 	len = 0;
 	i = 0;
@@ -99,9 +61,15 @@ int	ft_printf(const char *s, ...)
 	while (s[i])
 	{
 		if (s[i] == '%')
-			len += ft_formats(s, ap, ++i);
+			tmp = ft_formats(s, ap, ++i);
 		else
-			len += ft_putchar(s[i]);
+			tmp = ft_putchar(s[i]);
+		if (tmp == -1)
+		{
+			va_end(ap);
+			return (-1);
+		}
+		len += tmp;
 		i++;
 	}
 	va_end(ap);
