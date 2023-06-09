@@ -1,41 +1,43 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
-CLIENT = client
-SERVER = server
+NAME = server \
+	   client
+	   
+SERVER_SRCS = server.c
+CLIENT_SRCS = client.c
+		
 
-CLIENT_BONUS = client_bonus
-SERVER_BONUS = server_bonus
+SERVER_OBJS = server.o
+CLIENT_OBJS = client.o
+		
 
-NAME = $(CLIENT) $(SERVER)
-LIBFT = Libft/libft.a
+
+LIB_DIR = ./ft_printf
+LIB_NAME = libftprintf
+LIB = $(LIB_DIR)/$(LIB_NAME).a
+
 
 all: $(NAME)
+	
+$(LIB):
+	make -C $(LIB_DIR)
 
-bonus: $(CLIENT_BONUS) $(SERVER_BONUS)
+server: $(SERVER_OBJS) $(LIB)
+	$(CC) $(CFLAGS) -o $@ $^
 
-$(CLIENT): Minitalk/client.c $(LIBFT)
-	$(CC) $(CFLAGS) Minitalk/client.c $(LIBFT) -o $(CLIENT)
-
-$(SERVER): Minitalk/server.c $(LIBFT)
-	$(CC) $(CFLAGS) Minitalk/server.c $(LIBFT) -o $(SERVER)
-
-$(SERVER_BONUS): Minitalk_bonus/server_bonus.c $(LIBFT)
-	$(CC) $(CFLAGS) Minitalk_bonus/server_bonus.c $(LIBFT) -o $(SERVER_BONUS)
-
-$(CLIENT_BONUS): Minitalk_bonus/client_bonus.c $(LIBFT)
-	$(CC) $(CFLAGS) Minitalk_bonus/client_bonus.c $(LIBFT) -o $(CLIENT_BONUS)
-
-$(LIBFT): $(shell find Libft/ -name "*.c" -type f)
-	$(MAKE) -C Libft 
+client: $(CLIENT_OBJS) $(LIB)
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	$(MAKE) -C Libft clean
+	rm -f $(SERVER_OBJS)
+	rm -f $(CLIENT_OBJS)
+	make -C $(LIB_DIR) clean
 
 fclean: clean
-	$(MAKE) -C Libft fclean
-	rm -rf $(NAME) $(SERVER_BONUS) $(CLIENT_BONUS)
+	rm -f $(NAME)
+	make -C $(LIB_DIR) fclean
 
 re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: fclean all clean re
