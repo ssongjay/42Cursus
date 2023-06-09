@@ -6,7 +6,7 @@
 /*   By: injsong <injsong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:55:46 by injsong           #+#    #+#             */
-/*   Updated: 2023/06/09 18:29:50 by injsong          ###   ########.fr       */
+/*   Updated: 2023/06/09 18:46:36 by injsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	send_msg(int pid, char *str, int len)
 				kill(pid, SIGUSR1);
 			else if (tmp == 1)
 				kill(pid, SIGUSR2);
-			usleep(30);
+			usleep(100);
 			bit++;
 		}
 		usleep(300);
